@@ -1,0 +1,7 @@
+# 스프링부트 - 웹소켓 예제
+
+- [프로젝트 설계 문서 보기](docs/index.md)
+- [GitHub Projects 보기](https://github.com/heebaek200/spring_class/projects)
+- [팀 프로젝트 일일 리포트 보기](https://github.com/heebaek200/spring_class/discussions)
+- [일일 리포트 게시글 템플릿](docs/daily-report-template.md)
+
