@@ -36,4 +36,4 @@ spring:
     init:
       mode: always
       data-locations:
-        - classpath:db/data.sql # 서버 시작 시 이 파일 실행
+        #classpath:db/data.sql # 서버 시작 시 이 파일 실행
