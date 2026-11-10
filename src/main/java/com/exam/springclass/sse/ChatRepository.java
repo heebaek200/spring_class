@@ -1,4 +1,4 @@
-package com.exam.springclass.chat;
+package com.exam.springclass.sse;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

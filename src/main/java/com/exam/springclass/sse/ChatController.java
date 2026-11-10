@@ -1,17 +1,20 @@
-package com.exam.springclass.chat;
+package com.exam.springclass.sse;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @RequiredArgsConstructor
 @Controller
 public class ChatController {
 
     private final ChatService chatService;
+    private final SseService sseService;
 
     // 채팅 목록 화면 (폴링)
     @GetMapping("/")
@@ -21,20 +24,14 @@ public class ChatController {
         return "index";
     }
 
-    // 채팅 화면
-    @GetMapping("/save-form")
-    public String saveForm(Model model) {
-
-        return "save-form";
-    }
-
     @PostMapping("/chat")
-    public String save(
-            @RequestParam("msg") String msg
-    ) {
-        chatService.save(msg);
+    @ResponseBody
+    public ResponseEntity<Void> save(@RequestParam("msg") String msg) {
+        Chat chat = chatService.save(msg);
 
-        return "redirect:/save-form";
+        sseService.send(msg);
+
+        return ResponseEntity.ok().build();
     }
 
 }

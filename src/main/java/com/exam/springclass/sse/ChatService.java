@@ -1,4 +1,4 @@
-package com.exam.springclass.chat;
+package com.exam.springclass.sse;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
