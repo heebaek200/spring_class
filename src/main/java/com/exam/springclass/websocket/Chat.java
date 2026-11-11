@@ -1,4 +1,4 @@
-package com.exam.springclass.sse;
+package com.exam.springclass.websocket;
 
 import jakarta.persistence.*;
 import lombok.Builder;
